@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn React With ME</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header, .main, .footer{
+            
+padding: 10px;
+        }
+        .header{
+            background-color:rgb(183, 185, 185);
+            text-align: center;
+            height: 10vh;
+            
+        }
+.main{
+    height: 80vh;
+    background-color: rgb(255, 255, 255);
+    text-align: justify;
+    padding: 30px;
+}
+.main li{
+    margin: 10px 0px;
+}
+.footer{
+    height: 10vh;
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <div class="root"></div>
+
+
+
+
+
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+
+const root=document.querySelector('.root')
+const header=(
+    <header className='header'>
+        <h1>First day of Learning react</h1>
+        <h2>This is jsx element javascript xml</h2>
+    </header>
+)
+const skills=['html','css','js']
+const formated_skills=skills.map((e)=><li>{e.toUpperCase()}</li>)
+const main=(
+    <main className='main'>
+    <h3>Hellooo Guyss</h3>
+    <h2>This is the main section</h2>
+    <h3>Skills</h3>
+    <ul>{formated_skills}</ul>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis aliquid sed deserunt, non quae quos voluptatibus rerum. Eligendi ipsam, blanditiis accusamus itaque unde soluta rem est vel ut dolor eveniet?</p>
+
+</main>
+
+)
+
+const footer=(
+    
+<footer className='footer' >
+    <address>Address tag with address,hi from EARTH</address>
+    <span>Thank you guyss,will see in the next day of learning react js</span>
+
+</footer>
+
+)
+const app=(
+    <div>
+        
+{header}
+{main}
+{footer}
+</div>
+    
+)
+
+ReactDOM.render(app,root)
+
+
+</script>
+    
+</body>
+</html>
