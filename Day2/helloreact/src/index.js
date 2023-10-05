@@ -1,32 +1,53 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import profile from './profile.jpg'
-const root=document.getElementById('root')
-let name='KANDHAN VS'
-let role='MERN Stack Developer'
-let skills=['HTML','CSS','JS','BOOTSTRAP','JQUERY','REACT JS','NODE JS','EXPRESS','MONGODB','PYTHON','PHP','MYSQL','ARDUINO']
-let formatedSkills=skills.map((e)=><li>{e}</li>)
-const imgStyle={
-  'borderRadius':'50%',
-  'width':'250px',
-  'height':'250px'
+import ReactDOM  from 'react-dom'
 
+const root=document.getElementById('root')
+const Header=(data)=>{
+    return(
+    <>
+    <h1>{data.heading}</h1>
+    <p>{data.para}</p>
+    </>
+)
 }
 
-const userCard=(
-  <div className='user-card'>
-  <div className='profile'>
-    <img style={imgStyle} src={profile} alt='profile'/>
-  </div>
-  <div className='profile-name'>
-    <h1>{name}</h1>
-    <h3>{role}</h3>
-  </div>
-  <div className='skills'>
-    <h1>SKILLS</h1>
-    <ul>{formatedSkills}</ul>
-  </div>
-  </div>
-)
+const Main=(data)=>{
+    return(
+        <>
+        <h2>{data.heading}</h2>
+        <p>
+            {data.para}
+        </p>
+        </>
+    )
+}
+const Footer=({heading,para,obj:{name,age}})=>{
+    return(
+        <>
+        <h2>
+            {heading}
+        </h2>
+        <p>
+            {para}
+        </p>
+        <h3>{name}</h3>
+        <h3>{age}</h3>
 
-ReactDOM.render(userCard,root)
+        </>
+    )
+}
+const App=()=>{
+    let obj={
+        name:'vsk',
+        age:20
+    }
+    return(
+        <>
+        <Header heading='Header Section' para='This is just the para' />
+        <Main heading='Main Section' para='This is just the para' />
+        <Footer heading='Footer Section' para='This is just the para' obj={obj} />
+
+        </>
+    )
+}
+ReactDOM.render(<App/>,root)
